@@ -1,3 +1,5 @@
+"use client";
+
 import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function HomePage() {
@@ -7,7 +9,7 @@ export default function HomePage() {
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>Willkommen bei Linn.Games</h1>
       <p>Hier kannst du dich anmelden, um exklusive Features und 3D-Anwendungen zu nutzen!</p>
-      
+
       {session ? (
         <>
           <p>Willkommen, {session.user?.email}!</p>
