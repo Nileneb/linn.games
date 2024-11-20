@@ -2,7 +2,6 @@
   "name": "nextjs-app",
   "version": "1.0.0",
   "description": "Linn.Games - Innovative Weblösungen und 3D-Anwendungen",
-  "main": "index.js",
   "scripts": {
     "dev": "NODE_OPTIONS='--max-old-space-size=4096' next dev",
     "build": "next build",
@@ -11,7 +10,9 @@
     "test": "jest",
     "prisma:migrate": "prisma migrate dev",
     "prisma:generate": "prisma generate",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "clean": "rimraf .next && rimraf node_modules",
+    "prepare": "husky install"
   },
   "keywords": [
     "Linn.Games",
