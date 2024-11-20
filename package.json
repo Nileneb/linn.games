@@ -11,8 +11,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
-    "clean": "rimraf .next && rimraf node_modules",
-    "prepare": "husky install"
+    "clean": "rimraf .next && rimraf node_modules"
   },
   "keywords": [
     "Linn.Games",
@@ -67,6 +66,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
     "jest": "^29.7.0",
     "postcss": "^8.4.23",
     "postcss-import": "^15.1.0",
