@@ -2,7 +2,10 @@ import NextAuth from "next-auth";
 import { SequelizeAdapter } from "@next-auth/sequelize-adapter";
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize(process.env.DATABASE_URL);
+// Verbindung zu deiner Datenbank
+const sequelize = new Sequelize(process.env.DATABASE_URL!, {
+  dialect: "mysql",
+});
 
 export default NextAuth({
   adapter: SequelizeAdapter(sequelize),
@@ -18,14 +21,12 @@ export default NextAuth({
       authorizationUrl: "https://github.com/login/oauth/authorize",
       profileUrl: "https://api.github.com/user",
       profile(profile) {
-        console.log("GitHub Profile:", profile); // Debugging Output
         return {
           id: profile.id,
           name: profile.name,
-          email: profile.email || `${profile.login}@github.local`, // Fallback für Email
+          email: profile.email,
         };
       },
     },
   ],
-  debug: true, // Debugging aktivieren
 });
