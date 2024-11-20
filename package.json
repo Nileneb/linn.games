@@ -8,9 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio"
   },
-  "keywords": ["Linn.Games", "Next.js", "3D", "React"],
+  "keywords": ["Linn.Games", "Next.js", "3D", "React", "TailwindCSS", "Prisma", "OAuth"],
   "author": "Your Name <youremail@example.com>",
   "license": "ISC",
   "dependencies": {
@@ -47,7 +50,7 @@
     "postcss": "^8.4.23",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
-    "prettier": "^2.9.0",
+    "prettier": "^2.8.8",
     "jest": "^29.7.0",
     "@testing-library/react": "^14.0.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
