@@ -1,14 +1,29 @@
 import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
+import { SequelizeAdapter } from "@next-auth/sequelize-adapter";
+import { Sequelize } from "sequelize";
 
-const handler = NextAuth({
+const sequelize = new Sequelize(process.env.DATABASE_URL);
+
+export default NextAuth({
+  adapter: SequelizeAdapter(sequelize),
   providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
-    }),
+    {
+      id: "github",
+      name: "GitHub",
+      type: "oauth",
+      version: "2.0",
+      scope: "read:user",
+      params: { grant_type: "authorization_code" },
+      accessTokenUrl: "https://github.com/login/oauth/access_token",
+      authorizationUrl: "https://github.com/login/oauth/authorize",
+      profileUrl: "https://api.github.com/user",
+      profile(profile) {
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+        };
+      },
+    },
   ],
-  secret: process.env.NEXTAUTH_SECRET,
 });
-
-export { handler as GET, handler as POST };
