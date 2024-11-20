@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-import { extend } from "@react-three/fiber";
 
 // Erweiterung des THREE-Namespaces, um Geometrien deklarativ zu nutzen
 extend({ BoxBufferGeometry: THREE.BoxBufferGeometry });

@@ -18,12 +18,14 @@ export default NextAuth({
       authorizationUrl: "https://github.com/login/oauth/authorize",
       profileUrl: "https://api.github.com/user",
       profile(profile) {
+        console.log("GitHub Profile:", profile); // Debugging Output
         return {
           id: profile.id,
           name: profile.name,
-          email: profile.email,
+          email: profile.email || `${profile.login}@github.local`, // Fallback für Email
         };
       },
     },
   ],
+  debug: true, // Debugging aktivieren
 });
