@@ -6,7 +6,7 @@ import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 // Erweiterung des THREE-Namespaces, um Geometrien deklarativ zu nutzen
-extend({ BoxBufferGeometry: THREE.BoxBufferGeometry });
+extend({ BoxGeometry: THREE.BoxGeometry });
 
 const Scene = () => {
   return (
