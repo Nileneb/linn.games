@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: url('Logo2.png') no-repeat center center fixed; /* Hintergrundbild hinzufügen */
+    background-size: contain; /* Bildgröße anpassen */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: rgb(102, 102, 102); /* Helles Blau, leicht transparent */
+    color: #000;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    header .nav-left, header .nav-right {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        header .nav-left li, header .nav-right li {
+            margin-right: 10px;
+        }
+
+            header .nav-left li a, header .nav-right li a {
+                color: #000;
+                text-decoration: none;
+            }
+
+.logo {
+    height: 160px; /* Erhöhen Sie die Höhe des Logos für bessere Sichtbarkeit */
+    width: auto; /* Behalten Sie das Seitenverhältnis bei */
+    margin: 0 10px; /* Abstand um das Logo */
+}
+/* Video Container styling */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    visibility: hidden; /* Start hidden */
+}
+
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the video covers the entire screen */
+    }
+
+/* Cookie notification styling */
+.push-notification {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+    .push-notification.visible {
+        display: block;
+        opacity: 1;
+    }
+
+section {
+    padding: 40px 0; /* Mehr Platz für Abschnitte */
+    text-align: center;
+}
+
+    section .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    section h2 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+.text, .image {
+    flex: 1;
+    min-width: 300px; /* Mindestbreite für Flex-Elemente */
+    margin: 10px; /* Abstand zwischen den Flex-Elementen */
+}
+
+.example-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    max-width: 500px; /* Maximalbreite für Bilder */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Formularbreite */
+    margin: 0 auto; /* Zentrierung des Formulars */
+}
+
+    form label {
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"], form input[type="email"] {
+        margin-bottom: 10px;
+        width: 100%; /* Volle Breite im Formular */
+    }
+
+    form textarea {
+        margin-bottom: 10px;
+        height: 150px; /* Höhe des Textbereichs */
+        width: 100%; /* Volle Breite im Formular */
+    }
+
+    form button {
+        width: fit-content;
+        align-self: flex-start;
+    }
+
+footer {
+    background: rgb(102, 102, 102); /* Helles Blau, leicht transparent */
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; /* Entfernen Sie den ungewollten Rand */
+}
+
+    footer a {
+        color: #000;
+        text-decoration: none;
+    }
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+    .social-media a {
+        margin: 0 10px;
+    }
+
+    .social-media img {
+        height: 24px;
+        width: 24px;
+    }
+
+.push-notification {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+    .push-notification p {
+        margin-bottom: 10px;
+    }
+
+    .push-notification button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        .push-notification button:hover {
+            background-color: #45a049;
+        }
+
+header .nav-left li a, header .nav-right li a {
+    color: #fff;
+    background-color: #007BFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+header .nav-left li a:hover, header .nav-right li a:hover {
+    background-color: #0056b3;
+}
+
+.split-screen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-section, .login-section {
+    width: 40%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.separator {
+    width: 20%;
+    text-align: center;
+}
+
+.separator-image {
+    width: 100%;
+    height: auto;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    form button:hover {
+        background-color: #0056b3;
+    }
