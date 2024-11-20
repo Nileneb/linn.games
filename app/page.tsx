@@ -1,8 +1,8 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import Scene from "./3DScene"; // Dein Canvas
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Scene from "./3DScene";
+import { FaGithub, FaDiscord } from "react-icons/fa";
 
 export default function HomePage() {
   const { data: session } = useSession();
@@ -56,33 +56,36 @@ export default function HomePage() {
         </div>
       </main>
 
+      {/* Footer */}
       <footer className="py-4 border-t border-gray-700 flex justify-center space-x-4">
-  <a
-    href="https://github.com/nileneb"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-gray-400"
-  >
-    <FaGithub size={24} /> GitHub
-  </a>
-  <a
-    href="https://civitai.com/user/Nileneb"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-gray-400"
-  >
-    Civitai
-  </a>
-  <a
-    href="https://discord.gg/DEIN_DISCORD_LINK"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-gray-400"
-  >
-    Discord
-  </a>
-</footer>
-
+        <a
+          href="https://github.com/nileneb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-400 flex items-center space-x-2"
+        >
+          <FaGithub size={24} />
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://civitai.com/user/Nileneb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-400 flex items-center space-x-2"
+        >
+          <FaGithub size={24} />
+          <span>Civitai</span>
+        </a>
+        <a
+          href="https://discord.gg/DEIN_DISCORD_LINK"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-400 flex items-center space-x-2"
+        >
+          <FaDiscord size={24} />
+          <span>Discord</span>
+        </a>
+      </footer>
     </div>
   );
 }
