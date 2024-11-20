@@ -1,4 +1,4 @@
-import SceneWrapper from "../components/3DScene";
+import SceneWrapper from "../3DScene";
 
 export default function ThreeDViewer() {
   const handleObjectClick = (name: string) => {
