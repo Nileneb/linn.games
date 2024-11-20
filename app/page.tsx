@@ -1,15 +1,13 @@
-"use client";
-
 import { signIn, signOut, useSession } from "next-auth/react";
+import Scene from "./3DScene";
 
 export default function HomePage() {
   const { data: session } = useSession();
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
+    <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>Willkommen bei Linn.Games</h1>
-      <p>Hier kannst du dich anmelden, um exklusive Features und 3D-Anwendungen zu nutzen!</p>
-
+      <p>Exklusive Features und 3D-Anwendungen!</p>
       {session ? (
         <>
           <p>Willkommen, {session.user?.email}!</p>
@@ -22,42 +20,11 @@ export default function HomePage() {
               border: "none",
               borderRadius: "5px",
               cursor: "pointer",
-              marginBottom: "20px",
             }}
           >
             Abmelden
           </button>
-
-          <div style={{ marginTop: "20px" }}>
-            <a
-              href="/dashboard"
-              style={{
-                display: "inline-block",
-                margin: "10px",
-                padding: "10px 20px",
-                backgroundColor: "blue",
-                color: "white",
-                textDecoration: "none",
-                borderRadius: "5px",
-              }}
-            >
-              Zum Dashboard
-            </a>
-            <a
-              href="/3d"
-              style={{
-                display: "inline-block",
-                margin: "10px",
-                padding: "10px 20px",
-                backgroundColor: "green",
-                color: "white",
-                textDecoration: "none",
-                borderRadius: "5px",
-              }}
-            >
-              Starte 3D-Anwendungen
-            </a>
-          </div>
+          <Scene />
         </>
       ) : (
         <button
